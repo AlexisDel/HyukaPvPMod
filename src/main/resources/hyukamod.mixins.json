@@ -6,8 +6,13 @@
   "mixins": [
   ],
   "client": [
-    "HyukaMixin",
-    "accessor.LivingEntityAccessor"
+    "LivingEntityMixin",
+    "invoker.LivingEntityInvoker",
+    "PlayerEntityMixin",
+    "ProjectileUtilMixin",
+    "SwordItemMixin",
+    "GameOptionsMixin",
+    "gui.VideoOptionsScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
