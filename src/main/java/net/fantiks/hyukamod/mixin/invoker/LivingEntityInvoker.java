@@ -9,5 +9,9 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 public interface LivingEntityInvoker {
 
     @Invoker("applyDamage")
-    public void invokeApplyDamage(DamageSource source, float amount);
+    void invokeApplyDamage(DamageSource source, float amount);
+
+    @Invoker("setLivingFlag")
+    void invokeSetLivingFlag(int mask, boolean value);
+
 }
