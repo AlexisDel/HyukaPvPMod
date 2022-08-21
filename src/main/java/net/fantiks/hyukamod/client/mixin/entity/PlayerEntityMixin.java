@@ -1,4 +1,4 @@
-package net.fantiks.hyukamod.mixin;
+package net.fantiks.hyukamod.client.mixin.entity;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleEffect;

@@ -1,17 +1,14 @@
-package net.fantiks.hyukamod.mixin;
+package net.fantiks.hyukamod.client.mixin.entity;
 
-import net.fantiks.hyukamod.events.LivingHurtCallback;
+import net.fantiks.hyukamod.behavior.OldAnimationsLivingEntityBehavior;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
-import net.minecraft.util.ActionResult;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.*;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
@@ -25,11 +22,11 @@ public abstract class LivingEntityMixin{
         return true;
     }
 
-    @ModifyArg(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;applyDamage(Lnet/minecraft/entity/damage/DamageSource;F)V"), index = 1)
-    private float reducedBlockedDamage(float amount) {
-        if (((LivingEntity) ((Object) this)) instanceof PlayerEntity && ((LivingEntity) ((Object) this)).getActiveItem().getItem() instanceof SwordItem) {
-            return amount/2.0f;
-        }
-        return amount;
+
+    private static final OldAnimationsLivingEntityBehavior behavior = new OldAnimationsLivingEntityBehavior();
+    @Inject(at = @At(value = "HEAD"), method = "isBlocking", cancellable = true)
+    private void old_animations$isBlocking(CallbackInfoReturnable<Boolean> callbackInfo) {
+        LivingEntity entity = (LivingEntity) (Object) this;
+        behavior.modifyIsBlockingBehavior(entity, entity.getActiveItem(), callbackInfo);
     }
 }

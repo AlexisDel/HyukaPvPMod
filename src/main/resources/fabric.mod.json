@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fantiks.hyukamod.HyukaMod"
+      "net.fantiks.hyukamod.client.HyukaModClient"
     ]
   },
   "mixins": [

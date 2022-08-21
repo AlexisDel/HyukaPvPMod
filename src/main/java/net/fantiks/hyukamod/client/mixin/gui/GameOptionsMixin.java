@@ -1,4 +1,4 @@
-package net.fantiks.hyukamod.mixin;
+package net.fantiks.hyukamod.client.mixin.gui;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.AttackIndicator;

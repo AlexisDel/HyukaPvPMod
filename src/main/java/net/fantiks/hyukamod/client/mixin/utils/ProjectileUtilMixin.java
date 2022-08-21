@@ -1,6 +1,5 @@
-package net.fantiks.hyukamod.mixin;
+package net.fantiks.hyukamod.client.mixin.utils;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.util.math.Box;
 import org.spongepowered.asm.mixin.Mixin;

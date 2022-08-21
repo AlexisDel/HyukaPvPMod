@@ -1,19 +1,21 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fantiks.hyukamod.mixin",
+  "package": "net.fantiks.hyukamod.client.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
   "client": [
-    "LivingEntityMixin",
-    "invoker.LivingEntityInvoker",
-    "accessor.LivingEntityAccessor",
-    "PlayerEntityMixin",
-    "ProjectileUtilMixin",
-    "SwordItemMixin",
-    "GameOptionsMixin",
-    "gui.VideoOptionsScreenMixin"
+    "entity.LivingEntityMixin",
+    "entity.PlayerEntityMixin",
+    "gui.GameOptionsMixin",
+    "gui.VideoOptionsScreenMixin",
+    "item.ItemMixin",
+    "renderer.CameraMixin",
+    "renderer.entity.feature.HeldItemFeatureRendererMixin",
+    "renderer.entity.model.PlayerEntityModelMixin",
+    "renderer.item.HeldItemRendererMixin",
+    "utils.ProjectileUtilMixin"
   ],
   "injectors": {
     "defaultRequire": 1
