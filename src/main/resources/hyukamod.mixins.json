@@ -12,6 +12,8 @@
     "PlayerEntityMixin",
     "ProjectileUtilMixin",
     "SwordItemMixin",
+    "render.HeldItemRendererMixin",
+    "render.HeldItemFeatureRendererMixin",
     "GameOptionsMixin",
     "gui.VideoOptionsScreenMixin"
   ],
