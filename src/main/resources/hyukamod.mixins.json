@@ -13,7 +13,8 @@
     "client.HeldItemRendererMixin",
     "client.HeldItemFeatureRendererMixin",
     "client.GameOptionsMixin",
-    "client.VideoOptionsScreenMixin"
+    "client.VideoOptionsScreenMixin",
+    "client.PlayerEntityModelMixin"
   ],
   "injectors": {
     "defaultRequire": 1

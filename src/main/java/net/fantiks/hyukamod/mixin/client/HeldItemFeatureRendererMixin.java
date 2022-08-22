@@ -23,7 +23,7 @@ public class HeldItemFeatureRendererMixin {
     @Inject(method = "renderItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/util/math/MatrixStack;push()V"))
     private void old_animations$renderItem(LivingEntity entity, ItemStack stack, ModelTransformation.Mode transformationMode, Arm arm, MatrixStack matrixStack, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
         if (entity.getStackInHand(Hand.MAIN_HAND).getItem() instanceof SwordItem && entity.isUsingItem()) {
-            swordBlockingRenderer.thirdPersonSwordBlockingRender(matrixStack);
+            swordBlockingRenderer.thirdPersonSwordBlockingRender(entity, stack, transformationMode, arm, matrixStack);
         }
     }
 }

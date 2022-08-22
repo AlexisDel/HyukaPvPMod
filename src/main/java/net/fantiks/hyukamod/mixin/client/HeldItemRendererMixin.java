@@ -33,7 +33,7 @@ public class HeldItemRendererMixin {
     )
     private void old_animations$renderFirstPersonItem(AbstractClientPlayerEntity player, float tickDelta, float pitch, Hand hand, float swingProgress, ItemStack item, float equipProgress, MatrixStack matrixStack, VertexConsumerProvider vertexConsumers, int light, CallbackInfo callbackInfo) {
         if (item.getItem() instanceof SwordItem && player.isUsingItem()) {
-            swordBlockingRenderer.firstPersonSwordBlockingRender(hand, matrixStack);
+            swordBlockingRenderer.firstPersonSwordBlockingRender(hand, matrixStack, swingProgress);
         }
     }
 }
