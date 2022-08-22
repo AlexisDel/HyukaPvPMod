@@ -7,15 +7,13 @@
   ],
   "client": [
     "LivingEntityMixin",
-    "invoker.LivingEntityInvoker",
-    "accessor.LivingEntityAccessor",
     "PlayerEntityMixin",
     "ProjectileUtilMixin",
     "SwordItemMixin",
-    "render.HeldItemRendererMixin",
-    "render.HeldItemFeatureRendererMixin",
-    "GameOptionsMixin",
-    "gui.VideoOptionsScreenMixin"
+    "client.HeldItemRendererMixin",
+    "client.HeldItemFeatureRendererMixin",
+    "client.GameOptionsMixin",
+    "client.VideoOptionsScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

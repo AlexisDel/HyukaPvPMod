@@ -1,5 +1,6 @@
-package net.fantiks.hyukamod.mixin;
+package net.fantiks.hyukamod.mixin.client;
 
+import net.fantiks.hyukamod.options.CooldownIndicatorHandler;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.AttackIndicator;
 import net.minecraft.client.option.GameOptions;
@@ -14,10 +15,12 @@ import java.io.File;
 @Mixin(GameOptions.class)
 public class GameOptionsMixin {
 
+    CooldownIndicatorHandler cooldownIndicatorHandler = new CooldownIndicatorHandler();
+
     @Shadow private AttackIndicator attackIndicator;
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void disableAttackIndicator(MinecraftClient client, File optionsFile, CallbackInfo ci){
-        attackIndicator = AttackIndicator.OFF;
+        attackIndicator = cooldownIndicatorHandler.disableInGameAttackIndicator();
     }
 }
